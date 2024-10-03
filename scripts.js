@@ -1,28 +1,67 @@
-function updateIcon(select) {
-    const characterIcon = document.getElementById("character-icon");
-    const character = select.value;
+// 更新图标的函数
+function updateIcon(selectElement) {
+    const rowElement = selectElement.closest('.selector');  // 找到当前选择框所属的行
+    const iconElement = rowElement.querySelector('.select-icon');  // 找到当前行的图标元素
+    const selectedValue = selectElement.value;  // 获取选择的角色值
 
-    // 根据选择的角色更换图标
-    switch (character) {
+    // 根据选择的角色更新图标
+    switch (selectedValue) {
         case 'ykn':
-            characterIcon.src = 'image/ykn.png';
+            iconElement.src = 'image/ykn.png';
             break;
         case 'lisa':
-            characterIcon.src = 'image/lisa.png';
+            iconElement.src = 'image/lisa.png';
             break;
         case 'sayo':
-            characterIcon.src = 'image/sayo.png';
+            iconElement.src = 'image/sayo.png';
             break;
         case 'ako':
-            characterIcon.src = 'image/ako.png';
+            iconElement.src = 'image/ako.png';
             break;
         case 'rinko':
-            characterIcon.src = 'image/rinko.png';
+            iconElement.src = 'image/rinko.png';
             break;
         default:
-            characterIcon.src = 'image/icon.png';
+            iconElement.src = 'image/icon.png';  // 如果没有选择，清空图标
             break;
     }
+}
+
+// 动态添加新行
+function addRow() {
+    const calculator = document.getElementById('calculator');
+    const newRow = document.createElement('div');
+    newRow.classList.add('selector');
+
+    // 添加新行的HTML
+    newRow.innerHTML = `
+        <img src="" class="select-icon" alt="角色图标">
+        <select class="character" onchange="updateIcon(this)">
+            <option disabled selected>请选择角色</option>
+            <option value="ykn">ykn</option>
+            <option value="lisa">lisa</option>
+            <option value="sayo">sayo</option>
+            <option value="ako">ako</option>
+            <option value="rinko">rinko</option>
+        </select>
+        <select class="type">
+            <option disabled selected>请选择种类</option>
+            <option value="通常盘">通常盘</option>
+            <option value="限定盘A">限定盘A</option>
+            <option value="限定盘B">限定盘B</option>
+            <option value="set">set</option>
+        </select>
+        <select class="抽选">
+            <option disabled selected>是否留抽选</option>
+            <option value="有抽选">有抽选</option>
+            <option value="无抽选">无抽选</option>
+        </select>
+        <input type="text" class="特典" placeholder="特典" readonly>
+        <input type="text" class="price" placeholder="价格" readonly>
+    `;
+
+    // 将新行添加到页面
+    calculator.appendChild(newRow);
 }
 
 function calculatePrice(character, type, 抽选) {

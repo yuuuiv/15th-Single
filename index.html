@@ -40,10 +40,8 @@
         <h2>总价计算器</h2>
         <div id="calculator">
             <div class="selector">
-                <!-- 图标显示框 -->
-                <img src="image/icon.png" class="select-icon" id="character-icon" alt="角色图标">
-
-                <!-- 选择角色 -->
+                <!-- 每行都会有一个独立的图标 -->
+                <img src="image/icon.png" class="select-icon" alt="角色图标">
                 <select class="character" onchange="updateIcon(this)">
                     <option disabled selected>请选择角色</option>
                     <option value="ykn">ykn</option>
@@ -52,7 +50,7 @@
                     <option value="ako">ako</option>
                     <option value="rinko">rinko</option>
                 </select>
-
+        
                 <select class="type">
                     <option disabled selected>请选择种类</option>
                     <option value="通常盘">通常盘</option>
@@ -69,8 +67,8 @@
                 <input type="text" class="price" placeholder="价格" readonly>
             </div>
         </div>
-
-        <button class="add-row-button" onclick="addRow()">加一行</button>
+        
+        <button class="add-row-button" onclick="addRow()">加一行</button>                     
 
         <div class="total">
             <p>目前总价：<span id="total-price">0</span> 元</p>
