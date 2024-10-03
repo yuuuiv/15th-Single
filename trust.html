@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓝绿支付</title>
+</head>
+<body>
+    <h1>请务必记得备注圈名！！</h1>
+    <div style="display: flex; justify-content: space-around;">
+        <div>
+            <img src="image/wechat.png" alt="微信支付">
+            <p>微信</p>
+        </div>
+        <div>
+            <img src="image/alipay.png" alt="支付宝支付">
+            <p>支付宝</p>
+        </div>
+    </div>
+    <h2>请务必记得备注圈名！！</h2>
+    <p id="countdown">30</p>
+    <button onclick="paymentComplete()">我已付款</button>
+
+    <script>
+        let timeLeft = 30;
+        const countdownElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            countdownElement.innerText = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+
+        function paymentComplete() {
+            window.location.href = 'confirmation.html';
+        }
+    </script>
+</body>
+</html>

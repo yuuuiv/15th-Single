@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roselia 15th Single「礎の花冠」代购</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Roselia 15th Single「礎の花冠」代购</h1>
+        <p>大家好，这是一个为了方便收集统计15单购买需求而设计的网站。<br>
+           本人承诺不会将信息泄露，或另作他用，敬请放心。</p>
+        <p>关于Roselia这次的新单，即15单「礎の花冠」，将在2024年12月11日出荷。<br>
+           各位预定的碟，部分会线上下单，去日本自提；剩余的将线下购买。<br>
+           所有的碟都将于本人回国后，也就是2024年12月16日发货，邮费统一定价为9元。</p>
+        <p>已经开了代购群，方便大家随时跟进度。<br>
+           有三专，14单购买经验，也有武藏野萝单独live S席门票作为自证。<br>
+           保证绝对比myq和hxy客服态度好，还快XD</p>
+        <p>已更新碟的封面图，共三种：</p>
+
+        <div class="image-gallery">
+            <div class="image-item">
+                <img src="image/image1.jpg" alt="通常盘">
+                <p>通常盘</p>
+            </div>
+            <div class="image-item">
+                <img src="image/image2.jpg" alt="限定盘A">
+                <p>限定盘A  (内含东京场DAY1BD 巡演全幕间上半) </p>
+            </div>
+            <div class="image-item">
+                <img src="image/image3.jpg" alt="限定盘B">
+                <p>限定盘B  (内含东京场DAY2BD 巡演全幕间下半) </p>
+            </div>
+            <div class="image-item">
+                <img src="image/image4.jpg" alt="里封">
+                <p>里封</p>
+            </div>
+        </div>
+
+        <h2>总价计算器</h2>
+        <div id="calculator">
+            <div class="selector">
+                <label>请选择角色</label>
+                <select class="character">
+                    <option disabled selected>请选择角色</option>
+                    <option value="ykn"><img src="image/ykn.png" alt="ykn图标"> ykn</option>
+                    <option value="lisa"><img src="image/lisa.png" alt="lisa图标"> lisa</option>
+                    <option value="sayo"><img src="image/sayo.png" alt="sayo图标"> sayo</option>
+                    <option value="ako"><img src="image/ako.png" alt="ako图标"> ako</option>
+                    <option value="rinko"><img src="image/rinko.png" alt="rinko图标"> rinko</option>
+                </select>
+                <label>请选择种类</label>
+                <select class="type">
+                    <option disabled selected>请选择种类</option>
+                    <option value="通常盘">通常盘</option>
+                    <option value="限定盘A">限定盘A</option>
+                    <option value="限定盘B">限定盘B</option>
+                    <option value="set">set</option>
+                </select>
+                <label>是否留抽选</label>
+                <select class="抽选">
+                    <option disabled selected>是否留抽选</option>
+                    <option value="有抽选">有抽选</option>
+                    <option value="无抽选">无抽选</option>
+                </select>   
+                <label>特典：</label>
+                <input type="text" class="特典" readonly>
+                <label>价格</label>
+                <input type="text" class="price" readonly>
+            </div>
+        </div>
+
+        <button onclick="addRow()">加一行</button>
+
+        <div class="total">
+            <p>目前总价：<span id="total-price">0</span> 元</p>
+        </div>
+
+        <button onclick="confirmPayment()">确认</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

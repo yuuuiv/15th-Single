@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付确认</title>
+</head>
+<body>
+    <h1>您需要支付的金额为：<span id="total-price-display"></span> 元</h1>
+    <div>
+        <button onclick="trustMe()">如果你信得过我</button>
+        <button onclick="platform()">如果你想走平台</button>
+    </div>
+
+    <script>
+        document.getElementById('total-price-display').innerText = localStorage.getItem('totalPrice') || '0';
+
+        function trustMe() {
+            window.location.href = 'trust.html';
+        }
+
+        function platform() {
+            window.location.href = 'platform.html';
+        }
+    </script>
+</body>
+</html>
