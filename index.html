@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
+<head>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roselia 15th Single「礎の花冠」代购</title>
+    <link rel="icon" type="image/png" href="image/icon.png" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="image/icon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,26 +16,23 @@
         <p>关于Roselia这次的新单，即15单「礎の花冠」，将在2024年12月11日出荷。<br>
            各位预定的碟，部分会线上下单，去日本自提；剩余的将线下购买。<br>
            所有的碟都将于本人回国后，也就是2024年12月16日发货，邮费统一定价为9元。</p>
-        <p>已经开了代购群，方便大家随时跟进度。<br>
-           有三专，14单购买经验，也有武藏野萝单独live S席门票作为自证。<br>
-           保证绝对比myq和hxy客服态度好，还快XD</p>
         <p>已更新碟的封面图，共三种：</p>
 
         <div class="image-gallery">
             <div class="image-item">
-                <img src="image/image1.jpg" alt="通常盘">
+                <img src="image/image1.jpg" alt="通常盘" loading="lazy">
                 <p>通常盘</p>
             </div>
             <div class="image-item">
-                <img src="image/image2.jpg" alt="限定盘A">
+                <img src="image/image2.jpg" alt="限定盘A" loading="lazy">
                 <p>限定盘A  (内含东京场DAY1BD 巡演全幕间上半) </p>
             </div>
             <div class="image-item">
-                <img src="image/image3.jpg" alt="限定盘B">
+                <img src="image/image3.jpg" alt="限定盘B" loading="lazy">
                 <p>限定盘B  (内含东京场DAY2BD 巡演全幕间下半) </p>
             </div>
             <div class="image-item">
-                <img src="image/image4.jpg" alt="里封">
+                <img src="image/image4.jpg" alt="里封" loading="lazy">
                 <p>里封</p>
             </div>
         </div>
@@ -41,16 +40,19 @@
         <h2>总价计算器</h2>
         <div id="calculator">
             <div class="selector">
-                <label>请选择角色</label>
-                <select class="character">
+                <!-- 图标显示框 -->
+                <img src="image/icon.png" class="select-icon" id="character-icon" alt="角色图标">
+
+                <!-- 选择角色 -->
+                <select class="character" onchange="updateIcon(this)">
                     <option disabled selected>请选择角色</option>
-                    <option value="ykn"><img src="image/ykn.png" alt="ykn图标"> ykn</option>
-                    <option value="lisa"><img src="image/lisa.png" alt="lisa图标"> lisa</option>
-                    <option value="sayo"><img src="image/sayo.png" alt="sayo图标"> sayo</option>
-                    <option value="ako"><img src="image/ako.png" alt="ako图标"> ako</option>
-                    <option value="rinko"><img src="image/rinko.png" alt="rinko图标"> rinko</option>
+                    <option value="ykn">ykn</option>
+                    <option value="lisa">lisa</option>
+                    <option value="sayo">sayo</option>
+                    <option value="ako">ako</option>
+                    <option value="rinko">rinko</option>
                 </select>
-                <label>请选择种类</label>
+
                 <select class="type">
                     <option disabled selected>请选择种类</option>
                     <option value="通常盘">通常盘</option>
@@ -58,26 +60,23 @@
                     <option value="限定盘B">限定盘B</option>
                     <option value="set">set</option>
                 </select>
-                <label>是否留抽选</label>
                 <select class="抽选">
                     <option disabled selected>是否留抽选</option>
                     <option value="有抽选">有抽选</option>
                     <option value="无抽选">无抽选</option>
-                </select>   
-                <label>特典：</label>
-                <input type="text" class="特典" readonly>
-                <label>价格</label>
-                <input type="text" class="price" readonly>
+                </select>
+                <input type="text" class="特典" placeholder="特典" readonly>
+                <input type="text" class="price" placeholder="价格" readonly>
             </div>
         </div>
 
-        <button onclick="addRow()">加一行</button>
+        <button class="add-row-button" onclick="addRow()">加一行</button>
 
         <div class="total">
             <p>目前总价：<span id="total-price">0</span> 元</p>
         </div>
 
-        <button onclick="confirmPayment()">确认</button>
+        <button class="confirm-button" onclick="confirmPayment()">确认</button>
     </div>
 
     <script src="scripts.js"></script>

@@ -1,3 +1,30 @@
+function updateIcon(select) {
+    const characterIcon = document.getElementById("character-icon");
+    const character = select.value;
+
+    // 根据选择的角色更换图标
+    switch (character) {
+        case 'ykn':
+            characterIcon.src = 'image/ykn.png';
+            break;
+        case 'lisa':
+            characterIcon.src = 'image/lisa.png';
+            break;
+        case 'sayo':
+            characterIcon.src = 'image/sayo.png';
+            break;
+        case 'ako':
+            characterIcon.src = 'image/ako.png';
+            break;
+        case 'rinko':
+            characterIcon.src = 'image/rinko.png';
+            break;
+        default:
+            characterIcon.src = 'image/icon.png';
+            break;
+    }
+}
+
 function calculatePrice(character, type, 抽选) {
     let basePrice = 0;
     if (character === 'sayo' || character === 'ako') {
